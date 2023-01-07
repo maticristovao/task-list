@@ -14,4 +14,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left:0;
+}
+
+.task fa-icon{
+    color:red
 }
