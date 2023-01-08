@@ -1,0 +1,5 @@
+<footer>
+    <p>Copyright @2023</p>
+    <a routerLink="/about" *ngIf="hasRoute('/')">About</a>
+    <a routerLink="/" *ngIf="hasRoute('/about')">Go back</a>
+</footer>
