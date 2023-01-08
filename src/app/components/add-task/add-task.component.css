@@ -1,0 +1,13 @@
+.add-form{
+    margin-bottom:40px;
+}
+
+.add-form .btn{
+    margin-top: 15px;
+}
+
+p{
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: larger;
+}

@@ -1,6 +1,10 @@
-*{
+header{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     margin-bottom: 20px;
 }
+
+/* h1{
+    display: inline-block;
+} */
