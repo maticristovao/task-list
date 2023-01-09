@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
 import { Task } from 'src/app/Task';
@@ -10,27 +12,61 @@ import { Task } from 'src/app/Task';
 })
 export class AddTaskComponent implements OnInit{
   @Output() onAddTask:EventEmitter<Task> = new EventEmitter();
-  text:string = '';
-  day:string = '';
-  reminder:boolean = false;
+  
+  form:FormGroup;
+  currentDate:string|null;
+
   showAddTask:boolean = false;
   subscription?: Subscription;
 
-  constructor(private uiService:UiService){
+  constructor(private uiService:UiService, private formBuilder:FormBuilder, private datepipe:DatePipe){
     this.subscription = this.uiService.onToggle().subscribe(value => this.showAddTask = value);
+
+    this.form = this.formBuilder.group({
+      text:['', [Validators.required, Validators.minLength(10)]],
+      day:['', []],
+      reminder:[false, []]
+    });
+
+    let date:Date = new Date();
+    this.currentDate = this.datepipe.transform(date, 'YYYY-MM-ddTHH:MM');
   }
 
   ngOnInit(): void {
-    
+
   }
+
+
+  get Text(){
+    return this.form.get('text');
+  }
+  get Day(){
+    return this.form.get('day');
+  }
+  get Reminder(){
+    return this.form.get('reminder');
+  }
+
+  reset(){
+    this.form.reset();
+  }
+
+  
 
   onSubmit(){
-    if(!this.text){
-      alert("Please add a task");
+    if(this.form.valid && (this.form.value.day > this.currentDate!  ||  !this.form.value.day)){
+      const newTask = {
+        text: this.form.value.text,
+        day: this.form.value.day,
+        reminder: this.form.value.reminder
+      }
+      this.onAddTask.emit(newTask);
+      this.uiService.toggleAddTask();
+      this.reset();
+    }else{
+      this.form.markAllAsTouched();
     }
-
-    const {text, day, reminder} = this;
-    const newTask = {text, day, reminder};
-    this.onAddTask.emit(newTask);
   }
+
+  
 }

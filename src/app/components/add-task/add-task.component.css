@@ -11,3 +11,7 @@ p{
     font-weight: 600;
     font-size: larger;
 }
+
+input{
+    border-radius: 8px;
+}

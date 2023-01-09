@@ -1,28 +1,70 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Terminar primer módulo de Angular",
-      "day": "Agosto 5 a las 12:00",
-      "reminder": true
+      "text": "Pasar el portfolio a Angular",
+      "day": "2023-01-10T11:00",
+      "reminder": true,
+      "id": 9
     },
     {
-      "id": 2,
-      "text": "Hacer las compras para la cena",
-      "day": "Agosto 5 a las 17:00",
-      "reminder": true
+      "text": "Que ningún componente use el mock-tasks",
+      "day": "",
+      "reminder": false,
+      "id": 10
     },
     {
-      "id": 3,
-      "text": "Investigar sobre Bootstrap",
-      "day": "Agosto 5 a las 19:00",
-      "reminder": false
+      "text": "Add things to codepen",
+      "day": "2023-01-12T14:00",
+      "reminder": true,
+      "id": 11
     },
     {
-      "id": 4,
-      "text": "Leer mi libro favorito",
-      "day": "Agosto 5 a las 21:00",
-      "reminder": false
+      "text": "Hacer el modal de Contact info",
+      "day": "2023-01-12T14:00",
+      "reminder": true,
+      "id": 12
+    },
+    {
+      "text": "Que el texto arriba del save aparezca solo cuando se termina de escribir el texto del input",
+      "day": "2023-01-12T14:00",
+      "reminder": true,
+      "id": 13
+    },
+    {
+      "text": "system-ui es buena font",
+      "day": "2023-01-12T14:00",
+      "reminder": true,
+      "id": 14
+    },
+    {
+      "text": "Give style to error text",
+      "day": "2023-01-09T11:00",
+      "reminder": true,
+      "id": 17
+    },
+    {
+      "text": "Ordenar tasks por fecha de vencimiento o por reminder y fecha de vencimiento",
+      "day": "2023-01-09T15:00",
+      "reminder": true,
+      "id": 18
+    },
+    {
+      "text": "Hacer que el validator pida más de una palabra en vez de una cantidad de letras",
+      "day": "",
+      "reminder": true,
+      "id": 19
+    },
+    {
+      "text": "Ver como actualizar el current date",
+      "day": "",
+      "reminder": true,
+      "id": 20
+    },
+    {
+      "text": "fefefffffffffff",
+      "day": null,
+      "reminder": null,
+      "id": 21
     }
   ]
 }

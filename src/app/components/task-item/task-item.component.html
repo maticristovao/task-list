@@ -7,5 +7,5 @@
                 [icon]="faTimes" (click)="onDelete(task)"
             ></fa-icon>
         </h3>
-        <p>{{task.day}}</p>
+        <p *ngIf="task.day">{{task.day | date:'MMMM d y, H:mm'}} hs</p>
 </div>
