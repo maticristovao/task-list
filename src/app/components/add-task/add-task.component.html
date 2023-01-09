@@ -9,15 +9,15 @@
     </div>
     <div class="form-control">
         <label for="day">Day & Time</label>
-        <input type="datetime-local" id="day" name="day" placeholder="Add day & time" class="input" formControlName="day" [min]="currentDate"/>
+        <input type="datetime-local" id="day" name="day" placeholder="Add day & time" class="input date" formControlName="day" [min]="currentDate"/>
         <div *ngIf="form.value.day!<currentDate! && form.value.day">
-            <p >Please select a valid date and time</p>
+            <p class="error">Please select a valid date and time</p>
         </div>
     </div>
     <div class="form-control-check">
         <label for="reminder" class="label">Reminder</label>
         <input type="checkbox" id="reminder" name="reminder" class="input" formControlName="reminder"/>
     </div>
-    <p>{{form.value.text}}</p>
-    <input class="btn btn-block" type="submit" value="Save"/>
+    <p *ngIf="Text?.valid && Text?.touched">{{form.value.text}}</p>
+    <input class="btn btn-block" type="submit" value="Save" [attr.not-ready]="!form.valid"/>
 </form>

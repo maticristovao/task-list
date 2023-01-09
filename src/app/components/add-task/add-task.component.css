@@ -10,8 +10,23 @@ p{
     margin: 10px 0;
     font-weight: 600;
     font-size: larger;
+    background-color: #f4f4f4;
 }
 
 input{
     border-radius: 8px;
+}
+
+.error{
+    color:red;
+    font-size: smaller;
+}
+
+.date::placeholder{
+    background-color: red;
+    color:grey;
+}
+
+input[not-ready=true]{
+    background-color:grey !important;
 }
